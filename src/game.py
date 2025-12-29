@@ -1,3 +1,5 @@
+import numpy as np
+import math
 import random
 def simulate_game():
     snakes={
@@ -44,4 +46,9 @@ for i in range(n):
 
 print(f"Succesfully ran {n} simulations")
 
-
+brr=np.array(arr)
+print(f'Mean rolls: {np.mean(brr)}')
+print(f'Median rolls: {np.median(brr)}')
+print(f'Standard deviation: {np.std(brr)}')
+print(f'Minimum rolls: {np.min(brr)}')
+print(f'Maximum rolls: {np.max(brr)}')
