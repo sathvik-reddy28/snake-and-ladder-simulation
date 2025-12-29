@@ -1,5 +1,5 @@
 import random
-def board():
+def simulate_game():
     snakes={
          16 : 7,
          60 : 17,
@@ -21,24 +21,27 @@ def board():
         76 : 69,
         79 : 75
     }
-    i=0
+    pos=0
     count=0
-    while i<100:
+    while pos<100:
         j=random.randrange(1,7)
         count+=1
-        if i+j >100 :
-            i+=0
-        else:
-            i+=j
+        if pos+j<=100:
+            pos+=j
         
-        for k in snakes:
-            if i==k :
-                i=snakes[k]
-        for k in ladder:
-            if i==k :
-                i=ladder[k]
-     
+        if pos in snakes:
+            pos=snakes[pos]
+        if pos in ladder:
+            pos=ladder[pos]
 
     return count
 
-print(board() ) 
+n=1000
+arr=[]
+
+for i in range(n):
+    arr.append(simulate_game())
+
+print(f"Succesfully ran {n} simulations")
+
+
