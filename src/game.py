@@ -1,5 +1,6 @@
 import numpy as np
-import math
+import matplotlib.pyplot as plt
+
 import random
 def simulate_game():
     snakes={
@@ -52,3 +53,17 @@ print(f'Median rolls: {np.median(brr)}')
 print(f'Standard deviation: {np.std(brr)}')
 print(f'Minimum rolls: {np.min(brr)}')
 print(f'Maximum rolls: {np.max(brr)}')
+
+
+plt.hist(brr,bins=30,color='lightgreen',edgecolor='black')
+plt.title('Frequency distribution using histogram')
+plt.xlabel('No of dice rolls')
+plt.ylabel('Frequency')
+plt.show()
+
+
+plt.boxplot(brr)
+plt.title('Distribution of dice rolls (Box Plot)')
+plt.ylabel('Number of dice rolls')
+
+plt.show()
