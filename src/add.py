@@ -1,6 +1,6 @@
-def add_two(a,b):
+def add(a,b):
     return a+b
 
-print(add_two(5,3))
+print(add(5,3))
 
 
